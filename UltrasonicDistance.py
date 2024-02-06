@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 import time
 
 # GPIO pins for the ultrasonic sensor
+# See wiring diagram in /WiringDiagrams/Ultrasonic.png
 GPIO_TRIGGER = 40
 GPIO_ECHO = 38
 
