@@ -14,11 +14,15 @@ import json
 ''' This function makes a get request to the airtable API which will tell us how fast to spin the wheels'''
 
 ''' Put the URL for your Airtable Base here'''
-URL = 'INPUT_URL_HERE'
+''' Format: 'https://api.airtable.com/v0/BaseID/tableName '''
+URL = 'REPLACE_ME_WITH_YOUR_URL'
 
-#'https://api.airtable.com/v0/' + BaseID + '/' + tableName + '?api_key=' + APIKey
 
-r = requests.get(url = URL, params = {})
+''' Format: {'Authorization':'Bearer Access_Token'}
+Note that you need to leave "Bearer" before the access token '''
+Headers = {'Authorization':'Bearer REPLACE_ME_WITH_YOUR_ACCESS_TOKEN'}
+
+r = requests.get(url = URL, headers = Headers, params = {})
 '''
 The get request data comes in as a json package. We will convert this json package to a python dictionary so that it can be parsed
 '''
