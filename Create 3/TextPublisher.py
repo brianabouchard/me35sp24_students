@@ -19,6 +19,8 @@ class SimplePublisher(Node):
         super().__init__('simple_publisher')
 
         # Creates a publisher based on the message type "String" that has been imported from the std_msgs module above
+        # Sets the publisher to publish on the 'my_publisher' topic
+        # Sets a queue size of 10 - essentially a backlog of messages if the subscriber isn't receiving them fast enough
         self.publisher_ = self.create_publisher(String, 'my_publisher', 10)
 
         # Set delay in seconds
